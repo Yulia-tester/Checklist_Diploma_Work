@@ -141,7 +141,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
-				ORGANIZATIONNAME = Razeware;
+				ORGANIZATIONNAME = Distillery;
 				TargetAttributes = {
 					DD80A08F24D1EF4B00CF4598 = {
 						CreatedOnToolsVersion = 12.0;
