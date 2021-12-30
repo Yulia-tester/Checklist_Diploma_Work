@@ -6,7 +6,7 @@
 //  Copyright © 2021 Distillery. All rights reserved.
 
 import UIKit
-
+  
 class ChecklistViewController: UITableViewController, ItemDetailViewControllerDelegate {
   var checklist: Checklist!
 
