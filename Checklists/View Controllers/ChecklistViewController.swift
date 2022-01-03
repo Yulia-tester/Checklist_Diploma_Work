@@ -7,8 +7,14 @@
 
 import UIKit
   
-class ChecklistViewController: UITableViewController, ItemDetailViewControllerDelegate {
+final class ChecklistViewController: UITableViewController, ItemDetailViewControllerDelegate {
   var checklist: Checklist!
+  
+  
+  struct Constants {
+    static let cellID = "ChecklistItem"
+    static let emptyText = "(No Items)"
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -16,21 +22,24 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     navigationItem.largeTitleDisplayMode = .never
     title = checklist.name
   }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    tableView.reloadData()
+  }
 
-  func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
-    let label = cell.viewWithTag(1001) as! UILabel
-    if item.checked {
-      label.text = "√"
-    } else {
-      label.text = ""
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+
+    navigationController?.delegate = self
+
+    let index = dataModel.indexOfSelectedChecklist
+    if index >= 0 && index < dataModel.lists.count {
+      let checklist = dataModel.lists[index]
+      performSegue(withIdentifier: "ShowChecklist", sender: checklist)
     }
   }
 
-  func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
-    let label = cell.viewWithTag(1000) as! UILabel
-    label.text = item.text
-//    label.text = "\(item.itemID): \(item.text)"
-  }
 
   // MARK: - Navigation
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
