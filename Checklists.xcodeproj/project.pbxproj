@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B272097027831FF400D05A1F /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272096F27831FF400D05A1F /* ChecklistItem.swift */; };
 		B2733EE1277CABBC0098B2FA /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2733EE0277CABBC0098B2FA /* ListCell.swift */; };
 		DD0680CF24DB4B150099082F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0680CE24DB4B150099082F /* DataModel.swift */; };
 		DD1E564424DA000700A230C5 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1E564324DA000700A230C5 /* Checklist.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B272096F27831FF400D05A1F /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		B2733EE0277CABBC0098B2FA /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		DD0680CE24DB4B150099082F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		DD1E564324DA000700A230C5 /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
@@ -51,12 +53,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B2733EDF277CAB150098B2FA /* ListCell */ = {
+		B2733EDF277CAB150098B2FA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				B2733EE0277CABBC0098B2FA /* ListCell.swift */,
+				B272096F27831FF400D05A1F /* ChecklistItem.swift */,
 			);
-			path = ListCell;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		DD80A08724D1EF4B00CF4598 = {
@@ -104,7 +107,7 @@
 		DDB561CB24DC396F0062E5C5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B2733EDF277CAB150098B2FA /* ListCell */,
+				B2733EDF277CAB150098B2FA /* Cells */,
 				DD506DD824D9E6060073E161 /* AllListsViewController.swift */,
 				DD80A09724D1EF4C00CF4598 /* ChecklistViewController.swift */,
 				DD5E8BC524D5BC3000A763EE /* ItemDetailViewController.swift */,
@@ -222,6 +225,7 @@
 				DD80A09424D1EF4C00CF4598 /* AppDelegate.swift in Sources */,
 				DD80A09624D1EF4C00CF4598 /* SceneDelegate.swift in Sources */,
 				DDE1D9E524D35609006A4FB6 /* ChecklistItem.swift in Sources */,
+				B272097027831FF400D05A1F /* ChecklistItem.swift in Sources */,
 				DD1E564424DA000700A230C5 /* Checklist.swift in Sources */,
 				B2733EE1277CABBC0098B2FA /* ListCell.swift in Sources */,
 				DD1E564624DA0A0100A230C5 /* ListDetailViewController.swift in Sources */,
