@@ -23,15 +23,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V93-0C-AlW">
-                                            <rect key="frame" x="52" y="0.0" width="239" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMP-zB-miy">
-                                            <rect key="frame" x="52" y="22" width="239" height="21"/>
+                                            <rect key="frame" x="52" y="22" width="282" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -41,18 +34,21 @@
                                             <rect key="frame" x="4" y="7" width="44" height="28"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KOz-YO-Pch">
-                                            <rect key="frame" x="333" y="7" width="38" height="27"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5HU-ew-dBt">
-                                            <rect key="frame" x="307" y="10" width="18" height="22"/>
+                                            <rect key="frame" x="334" y="0.0" width="34" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="pencil" catalog="system"/>
                                             <connections>
                                                 <action selector="editPressed:" destination="dNo-WM-MGS" eventType="touchUpInside" id="LMN-3k-e3u"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V93-0C-AlW">
+                                            <rect key="frame" x="52" y="0.0" width="282" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -67,7 +63,7 @@
                             <outlet property="delegate" destination="Ld6-6g-T9j" id="9tc-ES-IZy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Checklists" id="wf4-Am-mLm">
+                    <navigationItem key="navigationItem" title="Чеклист" id="wf4-Am-mLm">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="OHA-hk-cJm">
                             <connections>
                                 <segue destination="BgI-8Y-uLJ" kind="show" identifier="AddChecklist" id="EWp-bp-3sc"/>
@@ -83,7 +79,7 @@
             </objects>
             <point key="canvasLocation" x="476" y="17.541229385307346"/>
         </scene>
-        <!--Add Checklist-->
+        <!--Добавить пункт-->
         <scene sceneID="hqf-u9-DX6">
             <objects>
                 <tableViewController storyboardIdentifier="ListDetailViewController" id="BgI-8Y-uLJ" customClass="ListDetailViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
@@ -165,7 +161,7 @@
                             <outlet property="delegate" destination="BgI-8Y-uLJ" id="m2o-Jn-cKg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Checklist" largeTitleDisplayMode="never" id="lc3-M3-X43">
+                    <navigationItem key="navigationItem" title="Добавить пункт" largeTitleDisplayMode="never" id="lc3-M3-X43">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zOi-Di-FfZ">
                             <connections>
                                 <action selector="cancel" destination="BgI-8Y-uLJ" id="dFF-tF-Ndu"/>
@@ -187,7 +183,7 @@
             </objects>
             <point key="canvasLocation" x="476" y="728.18590704647681"/>
         </scene>
-        <!--Choose Icon-->
+        <!--Выбрать иконку-->
         <scene sceneID="kIi-Z2-tZz">
             <objects>
                 <tableViewController id="W1P-Va-cym" customClass="IconPickerViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
@@ -219,7 +215,7 @@
                             <outlet property="delegate" destination="W1P-Va-cym" id="yNT-Kx-Yey"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Choose Icon" id="czG-nW-fyH"/>
+                    <navigationItem key="navigationItem" title="Выбрать иконку" id="czG-nW-fyH"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dqt-V2-4t7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -234,80 +230,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ChecklistItem" id="OmI-rD-Iky" userLabel="ChecklistItem1">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ChecklistCell" id="q9w-pD-rcf" userLabel="ChecklistCell" customClass="ChecklistCell" customModule="Checklists" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="24.5" width="375" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OmI-rD-Iky" id="FBd-9Y-9wR">
-                                    <rect key="frame" x="0.0" y="0.0" width="321" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mME-e9-aVV">
-                                            <rect key="frame" x="37" y="11.5" width="276" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="√" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrN-p6-aZj">
-                                            <rect key="frame" x="16" y="8.5" width="13" height="27"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="13" id="14F-ly-ubj"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
-                                            <color key="textColor" red="0.015686274509803921" green="0.66274509803921566" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="mME-e9-aVV" firstAttribute="centerY" secondItem="FBd-9Y-9wR" secondAttribute="centerY" id="6jp-ki-kI3"/>
-                                        <constraint firstItem="MrN-p6-aZj" firstAttribute="leading" secondItem="FBd-9Y-9wR" secondAttribute="leading" constant="16" id="KUk-pN-yLB"/>
-                                        <constraint firstItem="MrN-p6-aZj" firstAttribute="centerY" secondItem="FBd-9Y-9wR" secondAttribute="centerY" id="N73-rc-ND3"/>
-                                        <constraint firstItem="mME-e9-aVV" firstAttribute="leading" secondItem="MrN-p6-aZj" secondAttribute="trailing" constant="8" symbolic="YES" id="Y2o-8F-QVi"/>
-                                        <constraint firstAttribute="trailing" secondItem="mME-e9-aVV" secondAttribute="trailing" constant="8" id="kbz-4v-rP4"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="nO0-z9-W1E" kind="show" identifier="EditItem" trigger="accessoryAction" id="KYj-b7-CiX"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ChecklistItem" id="q9w-pD-rcf">
-                                <rect key="frame" x="0.0" y="68" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q9w-pD-rcf" id="fUK-O5-J2J">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="details2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBB-oD-moo">
-                                            <rect key="frame" x="52" y="22" width="231" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBB-oD-moo">
+                                            <rect key="frame" x="52" y="22" width="276" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54d-1d-khY">
-                                            <rect key="frame" x="52" y="0.0" width="231" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54d-1d-khY">
+                                            <rect key="frame" x="52" y="0.0" width="276" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vts-2n-Sqt">
-                                            <rect key="frame" x="324" y="5" width="41" height="33"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSn-DQ-ThT">
-                                            <rect key="frame" x="289" y="12" width="18" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="pencil" catalog="system"/>
-                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoZ-Gh-8wi">
-                                            <rect key="frame" x="8" y="10" width="36" height="25"/>
+                                            <rect key="frame" x="0.0" y="1" width="44" height="42"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="checkmark.circle.fill" catalog="system"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSn-DQ-ThT">
+                                            <rect key="frame" x="332" y="0.0" width="33" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="pencil" catalog="system"/>
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="accessoryView" destination="54d-1d-khY" id="wlr-vg-8lr"/>
+                                    <outlet property="details" destination="dBB-oD-moo" id="i0S-PP-abJ"/>
+                                    <outlet property="title" destination="54d-1d-khY" id="wRT-2Q-tLs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -316,7 +275,7 @@
                             <outlet property="delegate" destination="og3-1M-0f6" id="s0q-2N-DsC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="(Name of the Checklist)" id="nhE-2k-87b">
+                    <navigationItem key="navigationItem" title="(Название чеклиста)" id="nhE-2k-87b">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7Nd-Aj-oKg">
                             <connections>
                                 <segue destination="nO0-z9-W1E" kind="show" identifier="AddItem" id="ZfM-Cl-l2e"/>
@@ -328,7 +287,7 @@
             </objects>
             <point key="canvasLocation" x="1253.5999999999999" y="17.541229385307346"/>
         </scene>
-        <!--Add Item-->
+        <!--Добавить пункт-->
         <scene sceneID="3TW-cT-bsb">
             <objects>
                 <tableViewController id="nO0-z9-W1E" customClass="ItemDetailViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
@@ -375,7 +334,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAv-nq-gLf">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Напомнить" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAv-nq-gLf">
                                                     <rect key="frame" x="16" y="11.5" width="284" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -406,7 +365,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86G-0S-Hfb">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86G-0S-Hfb">
                                                     <rect key="frame" x="16" y="11.5" width="105" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -437,7 +396,7 @@
                             <outlet property="delegate" destination="nO0-z9-W1E" id="ppE-0d-bIa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Item" id="VBH-mW-0eg">
+                    <navigationItem key="navigationItem" title="Добавить пункт" id="VBH-mW-0eg">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="4bn-AG-1Dd">
                             <color key="tintColor" red="0.015686274510000001" green="0.66274509800000003" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -481,7 +440,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZfM-Cl-l2e"/>
         <segue reference="aCn-zM-4j6"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.015686274510000001" green="0.66274509800000003" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>

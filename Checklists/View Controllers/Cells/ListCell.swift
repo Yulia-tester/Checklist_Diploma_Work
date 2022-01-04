@@ -9,38 +9,40 @@
 import UIKit
 
 protocol ListCellDelegate: AnyObject {
-  func listCellEditPressed(_ cell: ListCell, listData: Checklist?)
+    func listCellEditPressed(_ cell: ListCell, listData: Checklist?)
 }
 
 final class ListCell: UITableViewCell {
-  
-  
-  @IBOutlet weak var icon: UIImageView!
-  @IBOutlet weak var title: UILabel!
-  @IBOutlet weak var details: UILabel!
 
-  weak var delegate: ListCellDelegate?
-  var listData: Checklist? { didSet { setupCell() } }
+    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var details: UILabel!
 
-  private func setupCell() {
-    guard let data = listData else { return }
+    weak var delegate: ListCellDelegate?
+    var listData: Checklist? { didSet { setupCell() } }
 
+    struct Constants {
+        static let emptyText = "Нет пунктов"
+        static let allDoneText = "Все сделано"
+        static let remainingText = "осталось"
 
-    icon.image = UIImage(named: data.iconName)
-    title.text = data.name
-  }
+    }
 
-  //    cell.textLabel!.text = checklist.name
-  //    cell.accessoryType = .detailDisclosureButton
-  //    let count = checklist.countUncheckedItems()
-  //    if checklist.items.count == 0 {
-  //      cell.detailTextLabel!.text = Constants.emptyText
-  //    } else {
-  //      cell.detailTextLabel!.text = count == 0 ? "All Done" : "\(count) Remaining"
-  //    }
-  //    cell.imageView!.image = UIImage(named: checklist.iconName)
+    private func setupCell() {
+        guard let data = listData else { return }
 
-  @IBAction func editPressed(_ sender: UIButton) {
-    delegate?.listCellEditPressed(self, listData: listData)
-  }
+        icon.image = UIImage(named: data.iconName)
+        title.text = data.name
+
+        let count = data.countUncheckedItems()
+        if data.items.count == 0 {
+            details.text = Constants.emptyText
+        } else {
+            details.text = count == 0 ? Constants.allDoneText : "\(count) " + Constants.remainingText
+        }
+    }
+
+    @IBAction func editPressed(_ sender: UIButton) {
+        delegate?.listCellEditPressed(self, listData: listData)
+    }
 }
