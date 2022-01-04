@@ -26,7 +26,7 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate, Icon
     super.viewDidLoad()
 
     if let checklist = checklistToEdit {
-      title = "Edit Checklist"
+      title = "Отредактировать пункт"
       textField.text = checklist.name
       doneBarButton.isEnabled = true
       iconName = checklist.iconName
