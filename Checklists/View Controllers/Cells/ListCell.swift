@@ -8,6 +8,7 @@
 
 import UIKit
 
+//Ф-ция в протоколе обрабатывает нажатие на на редактирование ячейки
 protocol ListCellDelegate: AnyObject {
     func listCellEditPressed(_ cell: ListCell, listData: Checklist?)
 }
@@ -27,7 +28,7 @@ final class ListCell: UITableViewCell {
         static let remainingText = "осталось"
 
     }
-
+  //ф-ция создания ячейки
     private func setupCell() {
         guard let data = listData else { return }
 
@@ -41,7 +42,7 @@ final class ListCell: UITableViewCell {
             details.text = count == 0 ? Constants.allDoneText : "\(count) " + Constants.remainingText
         }
     }
-
+  //ф-ция передачи инфо о нажатии на редактирование ячейки в контроллер
     @IBAction func editPressed(_ sender: UIButton) {
         delegate?.listCellEditPressed(self, listData: listData)
     }
