@@ -14,7 +14,6 @@ protocol ChecklistCellDelegate: AnyObject {
 
 final class ChecklistCell: UITableViewCell {
   @IBOutlet weak var title: UILabel!
-  @IBOutlet weak var details: UILabel!
   
   weak var delegate: ChecklistCellDelegate?
   var itemData: ChecklistItem? { didSet { setupCell() } }
@@ -27,27 +26,28 @@ final class ChecklistCell: UITableViewCell {
   }
 
  
-//@IBAction func editPressed(_ sender: UIButton) {
-//    delegate?.listCellEditPressed(self, listData: listData)
-//  }
-//}
-//@IBAction func editPressed(_ sender: UIButton) {
-//  delegate?.listCellEditPressed(self, listData: listData)
-//}
 
-    //  func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
-    //    let label = cell.viewWithTag(1001) as! UILabel
-    //    if item.checked {
-    //      label.text = "√"
-    //    } else {
-    //      label.text = ""
-    //    }
-    //  }
-    //
-    //  func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
-    //    let label = cell.viewWithTag(1000) as! UILabel
-    //    label.text = item.text
-    ////    label.text = "\(item.itemID): \(item.text)"
-    //  }
+  @IBAction func checkmark(_ sender: UIButton) {
+    delegate?.listCellEditPressed(self, itemData: itemData)
+  }
+  @IBAction func editPressed(_ sender: UIButton) {
+    delegate?.listCellEditPressed(self, itemData: itemData)
+  }
+
+
+      func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
+        let label = cell.viewWithTag(1001) as! UILabel
+        if item.checked {
+          label.text = "√"
+        } else {
+          label.text = ""
+        }
+      }
+    
+      func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
+        let label = cell.viewWithTag(1000) as! UILabel
+        label.text = item.text
+          label.text = "\(item.itemID): \(item.text)"
+      }
 
 }
