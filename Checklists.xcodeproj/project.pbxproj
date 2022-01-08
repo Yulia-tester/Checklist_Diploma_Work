@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B2720972278397C300D05A1F /* ChecklistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2720971278397C300D05A1F /* ChecklistCell.swift */; };
+		B27209742789C09E00D05A1F /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27209732789C09D00D05A1F /* IconCell.swift */; };
 		B2733EE1277CABBC0098B2FA /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2733EE0277CABBC0098B2FA /* ListCell.swift */; };
 		DD0680CF24DB4B150099082F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0680CE24DB4B150099082F /* DataModel.swift */; };
 		DD1E564424DA000700A230C5 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1E564324DA000700A230C5 /* Checklist.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		B2720971278397C300D05A1F /* ChecklistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistCell.swift; sourceTree = "<group>"; };
+		B27209732789C09D00D05A1F /* IconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
 		B2733EE0277CABBC0098B2FA /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		DD0680CE24DB4B150099082F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		DD1E564324DA000700A230C5 /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				B2733EE0277CABBC0098B2FA /* ListCell.swift */,
 				B2720971278397C300D05A1F /* ChecklistCell.swift */,
+				B27209732789C09D00D05A1F /* IconCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				DD8B836724E02A2900CBEF4D /* IconPickerViewController.swift in Sources */,
 				DD80A09424D1EF4C00CF4598 /* AppDelegate.swift in Sources */,
 				DD80A09624D1EF4C00CF4598 /* SceneDelegate.swift in Sources */,
+				B27209742789C09E00D05A1F /* IconCell.swift in Sources */,
 				DDE1D9E524D35609006A4FB6 /* ChecklistItem.swift in Sources */,
 				DD1E564424DA000700A230C5 /* Checklist.swift in Sources */,
 				B2733EE1277CABBC0098B2FA /* ListCell.swift in Sources */,

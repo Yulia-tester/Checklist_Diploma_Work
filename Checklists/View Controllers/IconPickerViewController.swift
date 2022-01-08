@@ -19,6 +19,7 @@ class IconPickerViewController: UITableViewController {
   ]
 
   // MARK: - Table View Delegates
+  
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return icons.count
   }

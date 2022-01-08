@@ -29,6 +29,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
   weak var delegate: ItemDetailViewControllerDelegate?
   var itemToEdit: ChecklistItem?
 
+  //ф-ция сообщает, что view controller-а загрузилось в память
 	override func viewDidLoad() {
     super.viewDidLoad()
     navigationItem.largeTitleDisplayMode = .never
@@ -40,17 +41,18 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
       datePicker.date = item.dueDate
     }
   }
-
+  //ф-ция сообщает, что вью готово к представлению на экран
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     textField.becomeFirstResponder()
   }
 
   // MARK: - Actions
+  //ф-ция отмены
   @IBAction func cancel() {
     delegate?.itemDetailViewControllerDidCancel(self)
   }
-
+  //ф-ция сохранения
   @IBAction func done() {
     if let item = itemToEdit {
       item.text = textField.text!
@@ -67,7 +69,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
       delegate?.itemDetailViewController(self, didFinishAdding: item)
     }
   }
-
+ //ф-ция переключения свитчера
   @IBAction func shouldRemindToggled(_ switchControl: UISwitch) {
     textField.resignFirstResponder()
 
@@ -80,11 +82,13 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
   }
 
   // MARK: - Table View Delegates
+  //ф-ция сообщает делегату, что скоро будет выбрана ячейка
   override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
     return nil
   }
 
   // MARK: - Text Field Delegates
+  //ф-ция смены текста в поле
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
     let oldText = textField.text!
     let stringRange = Range(range, in: oldText)!
@@ -92,7 +96,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     doneBarButton.isEnabled = !newText.isEmpty
     return true
   }
-
+  //ф-ция 
   func textFieldShouldClear(_ textField: UITextField) -> Bool {
     doneBarButton.isEnabled = false
     return true
