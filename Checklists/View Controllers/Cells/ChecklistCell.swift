@@ -9,45 +9,68 @@
 import UIKit
 
 protocol ChecklistCellDelegate: AnyObject {
-  func listCellEditPressed(_ cell: ChecklistCell, itemData: ChecklistItem?)
+    func cheklistEditPressed(_ cell: ChecklistCell, itemData: ChecklistItem?)
 }
 
 final class ChecklistCell: UITableViewCell {
-  @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var title: UILabel!
+
+    weak var delegate: ChecklistCellDelegate?
+    var itemData: ChecklistItem? { didSet { setupCell() } }
+
+    private func setupCell() {
+        guard let data = itemData else { return }
+
+        title.text = data.text
+        //    icon.image = UIImage(named: data.iconName)
+        //    title.text = data.name
+    }
+
+
+  //тут
+  @IBOutlet weak var checkBoxOutlet:UIButton!{
+          didSet{
+              checkBoxOutlet.setImage(UIImage(named:"unchecked"), for: .normal)
+              checkBoxOutlet.setImage(UIImage(named:"checked"), for: .selected)
+          }
+      }
   
-  weak var delegate: ChecklistCellDelegate?
-  var itemData: ChecklistItem? { didSet { setupCell() } }
+  @IBAction func checkbox(_ sender: UIButton){
+          sender.checkboxAnimation {
+              print("I'm done")
+              //here you can also track the Checked, UnChecked state with sender.isSelected
+              print(sender.isSelected)
+              
+          }
+  }
   
-  private func setupCell() {
-    guard let data = itemData else { return }
-
-//    icon.image = UIImage(named: data.iconName)
-//    title.text = data.name
-  }
-
- 
-
-  @IBAction func checkmark(_ sender: UIButton) {
-    delegate?.listCellEditPressed(self, itemData: itemData)
-  }
-  @IBAction func editPressed(_ sender: UIButton) {
-    delegate?.listCellEditPressed(self, itemData: itemData)
-  }
+  
+  
+    //@IBAction func checkmark(_ sender: UIButton) {
+      
+    //}
+  /*
+    @IBAction func editPressed(_ sender: UIButton) {
+        delegate?.cheklistEditPressed(self, itemData: itemData)
+    }
 
 
-      func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
+    func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
         let label = cell.viewWithTag(1001) as! UILabel
         if item.checked {
-          label.text = "√"
+            label.text = "√"
         } else {
-          label.text = ""
+            label.text = ""
         }
-      }
+    }
     
-      func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
+    func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
         let label = cell.viewWithTag(1000) as! UILabel
         label.text = item.text
-          label.text = "\(item.itemID): \(item.text)"
-      }
+        label.text = "\(item.itemID): \(item.text)"
+    }
+
+}
+*/
 
 }

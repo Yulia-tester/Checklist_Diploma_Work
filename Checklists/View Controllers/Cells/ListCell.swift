@@ -14,27 +14,26 @@ protocol ListCellDelegate: AnyObject {
 }
 
 final class ListCell: UITableViewCell {
-
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var details: UILabel!
-
+    
     weak var delegate: ListCellDelegate?
     var listData: Checklist? { didSet { setupCell() } }
-
+    
     struct Constants {
         static let emptyText = "Нет пунктов"
         static let allDoneText = "Все сделано"
         static let remainingText = "осталось"
-
+        
     }
-  //ф-ция создания ячейки
+    //ф-ция создания ячейки
     private func setupCell() {
         guard let data = listData else { return }
-
+        
         icon.image = UIImage(named: data.iconName)
         title.text = data.name
-
+        
         let count = data.countUncheckedItems()
         if data.items.count == 0 {
             details.text = Constants.emptyText
@@ -42,7 +41,7 @@ final class ListCell: UITableViewCell {
             details.text = count == 0 ? Constants.allDoneText : "\(count) " + Constants.remainingText
         }
     }
-  //ф-ция передачи инфо о нажатии на редактирование ячейки в контроллер
+    //ф-ция передачи инфо о нажатии на редактирование ячейки в контроллер
     @IBAction func editPressed(_ sender: UIButton) {
         delegate?.listCellEditPressed(self, listData: listData)
     }

@@ -9,11 +9,15 @@
 import UIKit
 
 final class IconCell: UITableViewCell {
-  
-  @IBOutlet weak var icon: UIImageView!
-  @IBOutlet weak var title: UILabel!
-  
-  @IBAction func editPressed(_ sender:UIButton) {
-    delegate?.iconCellEditPressed(self, itemData: itemData)
-  }
+    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var title: UILabel!
+
+    var iconData: String? { didSet { setupCell() } }
+
+    private func setupCell() {
+        guard let data = iconData else { return }
+
+        icon.image = UIImage(named: data)
+        title.text = data
+    }
 }
