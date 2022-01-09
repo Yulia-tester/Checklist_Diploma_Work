@@ -12,21 +12,19 @@ final class AllListsViewController: UITableViewController {
     
     struct Constants {
         static let cellID = "ListCell"
-        
-        static let emptyText = "(No Items)"
     }
-  //ф-ция сообщает, что view controller-а загрузилось в память
+    //ф-ция сообщает, что view controller-а загрузилось в память
     override func viewDidLoad() {
         super.viewDidLoad()
         // Enable large titles
         navigationController?.navigationBar.prefersLargeTitles = true
     }
-  //ф-ция сообщает, что вью готово к представлению на экран
+    //ф-ция сообщает, что вью готово к представлению на экран
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
-  //ф-ция сообщает, что вью загрузилось
+    //ф-ция сообщает, что вью загрузилось
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -40,11 +38,11 @@ final class AllListsViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-  //ф-ция берет с модели данных к-чество ячеек в таблице и отображает на экране
+    //ф-ция берет с модели данных к-чество ячеек в таблице и отображает на экране
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataModel.lists.count
     }
-  //ф-ция возвращения ячеек с информацией с даты моделс
+    //ф-ция возвращения ячеек с информацией с даты моделс
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellID, for: indexPath)
@@ -59,13 +57,13 @@ final class AllListsViewController: UITableViewController {
         
         return cell
     }
-   //ф-ция обрабатывает нажатие на ячейку
+    //ф-ция обрабатывает нажатие на ячейку
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         dataModel.indexOfSelectedChecklist = indexPath.row
         let checklist = dataModel.lists[indexPath.row]
         performSegue(withIdentifier: "ShowChecklist", sender: checklist)
     }
-   //ф-ция удаления ячейки
+    //ф-ция удаления ячейки
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         dataModel.lists.remove(at: indexPath.row)
         
@@ -76,7 +74,7 @@ final class AllListsViewController: UITableViewController {
 
 extension AllListsViewController: UINavigationControllerDelegate {
     // MARK: - Navigation
-  //ф-ция смены экранов
+    //ф-ция смены экранов
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowChecklist" {
             let controller = segue.destination as! ChecklistViewController
@@ -88,7 +86,7 @@ extension AllListsViewController: UINavigationControllerDelegate {
     }
     
     // MARK: - Navigation Controller Delegates
-  //ф-ция управления панелью навигации Назад на предыдуший вью
+    //ф-ция управления панелью навигации Назад на предыдуший вью
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         // Was the back button tapped?
         if viewController === self {
@@ -99,18 +97,18 @@ extension AllListsViewController: UINavigationControllerDelegate {
 
 extension AllListsViewController: ListDetailViewControllerDelegate {
     // MARK: - List Detail View Controller Delegates
-  //ф-ция управления возвращением назад, когда нажимаем Cancel
+    //ф-ция управления возвращением назад, когда нажимаем Cancel
     func listDetailViewControllerDidCancel(_ controller: ListDetailViewController) {
         navigationController?.popViewController(animated: true)
     }
-  //ф-ция управления переходом на экран добавления нового пункта
+    //ф-ция управления переходом на экран добавления нового пункта
     func listDetailViewController(_ controller: ListDetailViewController, didFinishAdding checklist: Checklist) {
         dataModel.lists.append(checklist)
         dataModel.sortChecklists()
         tableView.reloadData()
         navigationController?.popViewController(animated: true)
     }
-  //ф-ция управления переходом на экран редактирования пункта
+    //ф-ция управления переходом на экран редактирования пункта
     func listDetailViewController(_ controller: ListDetailViewController, didFinishEditing checklist: Checklist) {
         dataModel.sortChecklists()
         tableView.reloadData()

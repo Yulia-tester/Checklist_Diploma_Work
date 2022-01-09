@@ -41,7 +41,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
       datePicker.date = item.dueDate
     }
   }
-  //ф-ция сообщает, что вью готово к представлению на экран
+  // ф-ция сообщает, что вью готово к представлению на экран
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     textField.becomeFirstResponder()

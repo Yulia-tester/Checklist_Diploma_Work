@@ -13,7 +13,7 @@ protocol ListDetailViewControllerDelegate: class {
   func listDetailViewController(_ controller: ListDetailViewController, didFinishEditing checklist: Checklist)
 }
 
-class ListDetailViewController: UITableViewController, UITextFieldDelegate, IconPickerViewControllerDelegate {
+class ListDetailViewController: UITableViewController, UITextFieldDelegate {
   @IBOutlet weak var textField: UITextField!
 	@IBOutlet weak var iconImage: UIImageView!
 	@IBOutlet weak var doneBarButton: UIBarButtonItem!
@@ -89,12 +89,14 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate, Icon
     doneBarButton.isEnabled = false
     return true
   }
+}
 
-  // MARK: - Icon Picker View Controller Delegate
-  //ф-ция устанавливает иконку
-  func iconPicker(_ picker: IconPickerViewController, didPick iconName: String) {
-    self.iconName = iconName
-    iconImage.image = UIImage(named: iconName)
-    navigationController?.popViewController(animated: true)
-  }
+// MARK: - Icon Picker View Controller Delegate
+//ф-ция устанавливает иконку
+extension ListDetailViewController: IconPickerViewControllerDelegate {
+    func iconPicker(_ picker: IconPickerViewController, didPick iconName: String) {
+        self.iconName = iconName
+        iconImage.image = UIImage(named: iconName)
+        navigationController?.popViewController(animated: true)
+    }
 }
