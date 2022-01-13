@@ -13,17 +13,20 @@ final class AllListsViewController: UITableViewController {
     struct Constants {
         static let cellID = "ListCell"
     }
+
     //ф-ция сообщает, что view controller-а загрузилось в память
     override func viewDidLoad() {
         super.viewDidLoad()
         // Enable large titles
         navigationController?.navigationBar.prefersLargeTitles = true
     }
+
     //ф-ция сообщает, что вью готово к представлению на экран
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
+
     //ф-ция сообщает, что вью загрузилось
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -42,9 +45,9 @@ final class AllListsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataModel.lists.count
     }
+
     //ф-ция возвращения ячеек с информацией с даты моделс
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellID, for: indexPath)
         
         let checklist = dataModel.lists[indexPath.row]
@@ -57,12 +60,14 @@ final class AllListsViewController: UITableViewController {
         
         return cell
     }
+
     //ф-ция обрабатывает нажатие на ячейку
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         dataModel.indexOfSelectedChecklist = indexPath.row
         let checklist = dataModel.lists[indexPath.row]
         performSegue(withIdentifier: "ShowChecklist", sender: checklist)
     }
+
     //ф-ция удаления ячейки
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         dataModel.lists.remove(at: indexPath.row)
@@ -72,8 +77,8 @@ final class AllListsViewController: UITableViewController {
     }
 }
 
+// MARK: - Navigation
 extension AllListsViewController: UINavigationControllerDelegate {
-    // MARK: - Navigation
     //ф-ция смены экранов
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowChecklist" {

@@ -1,0 +1,45 @@
+
+/* Class = "UILabel"; text = "title"; ObjectID = "54d-1d-khY"; */
+"54d-1d-khY.text" = "title";
+
+/* Class = "UILabel"; text = "Дата"; ObjectID = "86G-0S-Hfb"; */
+"86G-0S-Hfb.text" = "Дата";
+
+/* Class = "UITextField"; placeholder = "Name of the item"; ObjectID = "IOJ-bY-ZPa"; */
+"IOJ-bY-ZPa.placeholder" = "Задача";
+
+/* Class = "UILabel"; text = "Icon"; ObjectID = "JfU-30-AcA"; */
+"JfU-30-AcA.text" = "Картинка";
+
+/* Class = "UILabel"; text = "title"; ObjectID = "V93-0C-AlW"; */
+"V93-0C-AlW.text" = "title";
+
+/* Class = "UINavigationItem"; title = "Добавить пункт"; ObjectID = "VBH-mW-0eg"; */
+"VBH-mW-0eg.title" = "Добавить пункт";
+
+/* Class = "UINavigationItem"; title = "Выбрать иконку"; ObjectID = "czG-nW-fyH"; */
+"czG-nW-fyH.title" = "Выбрать картинку";
+
+/* Class = "UILabel"; text = "Напомнить"; ObjectID = "dAv-nq-gLf"; */
+"dAv-nq-gLf.text" = "Напомнить";
+
+/* Class = "UITextField"; placeholder = "Name of the List"; ObjectID = "iWf-4s-e71"; */
+"iWf-4s-e71.placeholder" = "Название";
+
+/* Class = "UINavigationItem"; title = "Добавить пункт"; ObjectID = "lc3-M3-X43"; */
+"lc3-M3-X43.title" = "Добавить пункт";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "mTS-wb-Clw"; */
+"mTS-wb-Clw.title" = "Item";
+
+/* Class = "UINavigationItem"; title = "(Название чеклиста)"; ObjectID = "nhE-2k-87b"; */
+"nhE-2k-87b.title" = "(Название чеклиста)";
+
+/* Class = "UILabel"; text = "title"; ObjectID = "vlB-ca-8zA"; */
+"vlB-ca-8zA.text" = "title";
+
+/* Class = "UINavigationItem"; title = "Чеклист"; ObjectID = "wf4-Am-mLm"; */
+"wf4-Am-mLm.title" = "Чеклист";
+
+/* Class = "UILabel"; text = "details"; ObjectID = "xMP-zB-miy"; */
+"xMP-zB-miy.text" = "details";
