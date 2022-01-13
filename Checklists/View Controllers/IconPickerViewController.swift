@@ -23,6 +23,11 @@ class IconPickerViewController: UITableViewController {
         "Дни Рождения", "Животные", "Образование", "Покупки", "Путешествия", "Семья", "Спорт"
     ]
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+
     // MARK: - Table View Delegates
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

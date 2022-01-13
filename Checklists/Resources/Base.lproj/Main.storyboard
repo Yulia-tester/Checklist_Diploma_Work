@@ -80,7 +80,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Чеклист" id="wf4-Am-mLm">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OHA-hk-cJm"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OHA-hk-cJm">
+                            <connections>
+                                <segue destination="BgI-8Y-uLJ" kind="show" identifier="AddChecklist" id="hIv-LK-9KT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="og3-1M-0f6" kind="show" identifier="ShowChecklist" id="R0E-jd-fAE"/>
@@ -109,7 +113,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="29.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the List" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iWf-4s-e71">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iWf-4s-e71">
                                                     <rect key="frame" x="16" y="4" width="343" height="36"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -138,7 +142,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="349.5" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfU-30-AcA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выбор иконки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfU-30-AcA">
                                                     <rect key="frame" x="16" y="11.5" width="281.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -199,53 +203,49 @@
         <scene sceneID="kIi-Z2-tZz">
             <objects>
                 <tableViewController id="W1P-Va-cym" customClass="IconPickerViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dYd-wn-yPk">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" estimatedRowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="dYd-wn-yPk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IconCell" rowHeight="60" id="NdM-zm-2lt" customClass="IconCell" customModule="Checklists" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IconCell" id="cVa-P2-i1c" customClass="IconCell" customModule="Checklists" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="24.5" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NdM-zm-2lt" id="PPQ-8Q-h4H" customClass="IconCell" customModule="Checklists" customModuleProvider="target">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cVa-P2-i1c" id="7Rj-On-eDf">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u8U-Me-hwk">
-                                            <rect key="frame" x="10" y="8" width="40" height="44"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="AMU-Zo-PDk"/>
-                                                <constraint firstAttribute="width" constant="40" id="pBd-CE-YeT"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlB-ca-8zA">
-                                            <rect key="frame" x="58" y="8" width="309" height="44"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lO2-rc-flI">
+                                            <rect key="frame" x="60" y="20" width="305" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U3U-iX-bHO">
+                                            <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="taj-fw-rhg"/>
+                                                <constraint firstAttribute="width" constant="40" id="yPR-Ue-FzY"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="u8U-Me-hwk" firstAttribute="leading" secondItem="PPQ-8Q-h4H" secondAttribute="leading" constant="10" id="28w-C4-xNu"/>
-                                        <constraint firstItem="vlB-ca-8zA" firstAttribute="leading" secondItem="u8U-Me-hwk" secondAttribute="trailing" constant="8" id="4ud-m9-WXg"/>
-                                        <constraint firstAttribute="bottom" secondItem="vlB-ca-8zA" secondAttribute="bottom" constant="8" id="BHw-gv-env"/>
-                                        <constraint firstItem="u8U-Me-hwk" firstAttribute="top" secondItem="PPQ-8Q-h4H" secondAttribute="top" constant="8" id="Ekd-EX-Xc2"/>
-                                        <constraint firstItem="vlB-ca-8zA" firstAttribute="top" secondItem="PPQ-8Q-h4H" secondAttribute="top" constant="8" id="TUn-W9-3Sd"/>
-                                        <constraint firstAttribute="trailing" secondItem="vlB-ca-8zA" secondAttribute="trailing" constant="8" id="gNm-A9-uLy"/>
-                                        <constraint firstItem="u8U-Me-hwk" firstAttribute="centerY" secondItem="PPQ-8Q-h4H" secondAttribute="centerY" id="gif-Y9-YAU"/>
-                                        <constraint firstAttribute="bottom" secondItem="u8U-Me-hwk" secondAttribute="bottom" constant="8" id="gnX-wK-EIx"/>
-                                        <constraint firstItem="vlB-ca-8zA" firstAttribute="leading" secondItem="u8U-Me-hwk" secondAttribute="trailing" constant="8" id="nXt-7N-8oD"/>
+                                        <constraint firstItem="lO2-rc-flI" firstAttribute="leading" secondItem="U3U-iX-bHO" secondAttribute="trailing" constant="10" id="0OC-aK-gyQ"/>
+                                        <constraint firstItem="lO2-rc-flI" firstAttribute="centerY" secondItem="7Rj-On-eDf" secondAttribute="centerY" id="Y1R-MI-NMo"/>
+                                        <constraint firstItem="U3U-iX-bHO" firstAttribute="leading" secondItem="7Rj-On-eDf" secondAttribute="leading" constant="10" id="djm-h3-ihk"/>
+                                        <constraint firstItem="U3U-iX-bHO" firstAttribute="centerY" secondItem="7Rj-On-eDf" secondAttribute="centerY" id="hjz-Mi-gvS"/>
+                                        <constraint firstAttribute="trailing" secondItem="lO2-rc-flI" secondAttribute="trailing" constant="10" id="zO2-QM-zYy"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="icon" destination="u8U-Me-hwk" id="PG8-A2-rwO"/>
-                                    <outlet property="title" destination="vlB-ca-8zA" id="keT-RZ-3SO"/>
+                                    <outlet property="icon" destination="U3U-iX-bHO" id="eWz-05-Ro8"/>
+                                    <outlet property="title" destination="lO2-rc-flI" id="cdp-2t-56P"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="W1P-Va-cym" id="CaE-D7-iIQ"/>
-                            <outlet property="delegate" destination="W1P-Va-cym" id="yNT-Kx-Yey"/>
+                            <outlet property="dataSource" destination="W1P-Va-cym" id="Qoo-OW-HHm"/>
+                            <outlet property="delegate" destination="W1P-Va-cym" id="Gee-S2-WKm"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Выбрать иконку" id="czG-nW-fyH"/>
@@ -258,13 +258,38 @@
         <scene sceneID="ZrH-Kp-rGr">
             <objects>
                 <tableViewController id="og3-1M-0f6" userLabel="Checklist" customClass="ChecklistViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ezD-M1-mxA">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ezD-M1-mxA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="m16-Wu-MHb">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJd-Uv-K58">
+                                    <rect key="frame" x="335" y="0.0" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="Ud1-SO-1rh"/>
+                                        <constraint firstAttribute="height" constant="40" id="xwQ-Si-mZO"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="eye" catalog="system"/>
+                                    <state key="selected" image="eye.slash" catalog="system"/>
+                                    <connections>
+                                        <action selector="eyePressed:" destination="og3-1M-0f6" eventType="touchUpInside" id="mKZ-1K-FTp"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="DJd-Uv-K58" firstAttribute="centerY" secondItem="m16-Wu-MHb" secondAttribute="centerY" id="LxV-Tw-785"/>
+                                <constraint firstAttribute="trailing" secondItem="DJd-Uv-K58" secondAttribute="trailing" id="Sft-n7-9Os"/>
+                                <constraint firstItem="DJd-Uv-K58" firstAttribute="centerY" secondItem="m16-Wu-MHb" secondAttribute="centerY" id="n5G-Yi-5eJ"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ChecklistCell" id="q9w-pD-rcf" userLabel="ChecklistCell" customClass="ChecklistCell" customModule="Checklists" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="24.5" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="64.5" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q9w-pD-rcf" id="fUK-O5-J2J">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -275,9 +300,10 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="4UT-Kp-J3k"/>
                                             </constraints>
-                                            <state key="normal" image="checkmark.circle.fill" catalog="system"/>
+                                            <state key="normal" image="circle" catalog="system"/>
+                                            <state key="selected" image="checkmark.circle" catalog="system"/>
                                             <connections>
-                                                <action selector="checkmark:" destination="q9w-pD-rcf" eventType="touchUpInside" id="AJD-wF-tzP"/>
+                                                <action selector="checkPressed:" destination="q9w-pD-rcf" eventType="touchUpInside" id="WHR-Kb-O0L"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSn-DQ-ThT">
@@ -287,7 +313,7 @@
                                             </constraints>
                                             <state key="normal" image="pencil" catalog="system"/>
                                             <connections>
-                                                <action selector="editPressed:" destination="q9w-pD-rcf" eventType="touchUpInside" id="zoK-9h-VEH"/>
+                                                <action selector="editPressed:" destination="q9w-pD-rcf" eventType="touchUpInside" id="yOj-dE-SNf"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54d-1d-khY">
@@ -311,7 +337,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="checkmark" destination="WoZ-Gh-8wi" id="fEg-gg-sGb"/>
+                                    <outlet property="button" destination="WoZ-Gh-8wi" id="S3E-mP-917"/>
                                     <outlet property="title" destination="54d-1d-khY" id="q0G-pK-8Y4"/>
                                 </connections>
                             </tableViewCell>
@@ -322,34 +348,29 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="(Название чеклиста)" id="nhE-2k-87b">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="7Nd-Aj-oKg">
-                                <connections>
-                                    <segue destination="nO0-z9-W1E" kind="show" identifier="AddItem" id="ZfM-Cl-l2e"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Item" image="eye.circle.fill" catalog="system" style="plain" id="mTS-wb-Clw">
-                                <connections>
-                                    <action selector="eyeIcon:" destination="og3-1M-0f6" id="I6J-Dd-IZH"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                        <connections>
-                            <outlet property="rightBarButtonItem" destination="mTS-wb-Clw" id="gLz-r1-53A"/>
-                        </connections>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7Nd-Aj-oKg">
+                            <connections>
+                                <segue destination="nO0-z9-W1E" kind="show" identifier="AddItem" id="ZfM-Cl-l2e"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="eyeIcon" destination="mTS-wb-Clw" id="4PI-Wg-TSi"/>
+                        <outlet property="eye" destination="DJd-Uv-K58" id="Gzs-5o-fBF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2zQ-Bs-Arj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Zso-hx-nlL">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                </button>
             </objects>
             <point key="canvasLocation" x="1253.5999999999999" y="17.541229385307346"/>
         </scene>
         <!--Добавить пункт-->
         <scene sceneID="3TW-cT-bsb">
             <objects>
-                <tableViewController id="nO0-z9-W1E" customClass="ItemDetailViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ItemDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nO0-z9-W1E" customClass="ItemDetailViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="3IM-YZ-7VA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -364,7 +385,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="29.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IOJ-bY-ZPa">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Задача" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IOJ-bY-ZPa">
                                                     <rect key="frame" x="16" y="4" width="343" height="36"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -498,10 +519,15 @@
             <point key="canvasLocation" x="-316" y="18"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hIv-LK-9KT"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.015686274510000001" green="0.66274509800000003" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
     <resources>
-        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="eye.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
+        <image name="circle" catalog="system" width="128" height="121"/>
+        <image name="eye" catalog="system" width="128" height="81"/>
+        <image name="eye.slash" catalog="system" width="128" height="86"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -34,7 +34,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     super.viewDidLoad()
     navigationItem.largeTitleDisplayMode = .never
     if let item = itemToEdit {
-      title = "Edit Item"
+      title = "Отредактировать"
       textField.text = item.text
       doneBarButton.isEnabled = true
       shouldRemindSwitch.isOn = item.shouldRemind
