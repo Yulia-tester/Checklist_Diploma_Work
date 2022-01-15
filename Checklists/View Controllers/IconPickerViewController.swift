@@ -11,7 +11,7 @@ protocol IconPickerViewControllerDelegate: AnyObject {
     func iconPicker(_ picker: IconPickerViewController, didPick iconName: String)
 }
 
-class IconPickerViewController: UITableViewController {
+final class IconPickerViewController: UITableViewController {
     weak var delegate: IconPickerViewControllerDelegate?
 
     struct Constants {
@@ -20,7 +20,8 @@ class IconPickerViewController: UITableViewController {
 
     let icons = [
         "Без иконки", "Здоровье", "Работа", "Быт",
-        "Дни Рождения", "Животные", "Образование", "Покупки", "Путешествия", "Семья", "Спорт"
+        "Дни Рождения", "Животные", "Образование",
+        "Покупки", "Путешествия", "Семья", "Спорт"
     ]
 
     override func viewWillAppear(_ animated: Bool) {
@@ -29,7 +30,6 @@ class IconPickerViewController: UITableViewController {
     }
 
     // MARK: - Table View Delegates
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return icons.count
     }
