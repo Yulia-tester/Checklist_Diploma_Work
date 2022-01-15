@@ -8,9 +8,11 @@
 
 import UIKit
 
+// Делегат редактирования ячейки
+// Делегат check/uncheck ячейки
 protocol ChecklistCellDelegate: AnyObject {
-    func cheklistEditPressed(_ cell: ChecklistCell, itemData: ChecklistItem?)
-    func cheklistCheckPressed(_ cell: ChecklistCell, itemData: ChecklistItem?)
+    func editPressed(_ cell: ChecklistCell, itemData: ChecklistItem?)
+    func checkPressed(_ cell: ChecklistCell, itemData: ChecklistItem?)
 }
 
 final class ChecklistCell: UITableViewCell {
@@ -27,14 +29,14 @@ final class ChecklistCell: UITableViewCell {
         button.isSelected = data.checked
     }
 
+    @IBAction func editPressed(_ sender: UIButton) {
+        delegate?.editPressed(self, itemData: itemData)
+    }
+
     @IBAction func checkPressed(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         itemData?.checked = !sender.isSelected
 
-        delegate?.cheklistCheckPressed(self, itemData: itemData)
-    }
-
-    @IBAction func editPressed(_ sender: UIButton) {
-        delegate?.cheklistEditPressed(self, itemData: itemData)
+        delegate?.checkPressed(self, itemData: itemData)
     }
 }
